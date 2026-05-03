@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+      <nav class='header'>
+        <div><img src='{% static "Images/tp-logo.png" %}' id='logo'/></div>
+        <div><img src='{% static "Images/lang-switch.svg" %}'/></div>
+        <div><i class="fa-solid fa-bars"></i></div>
+    </nav>
+   <div class="job-detail">
+
+    <h3 class="back"><a href="{% url 'home' %}">← All Jobs</a></h3>
+
+    <div class="job-container">
+
+        <!-- LEFT SIDE -->
+        <div class="left">
+            <img src="" alt="logo">
+
+            <h4>{{ detail.company }}</h4>
+            <p>{{ detail.address }}</p>
+            <p><a href="{{ detail.website }}">{{ detail.website }}</a></p>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="right">
+            <h2>{{ detail.title }}</h2>
+
+            <div class="info">
+                <p><strong>Closing Date:</strong> {{ detail.closing_date }}</p>
+                <p><strong>Job Published:</strong> {{ detail.posted_on }}</p>
+                <p><strong>Contact Email:</strong> {{ detail.email }}</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- DESCRIPTION SECTION -->
+    <div class="job-description">
+
+        <h3>Brief Description</h3>
+        <p>{{ detail.description }}</p>
+
+        <h4>Key Responsibilities:</h4>
+        <ul>
+            <li>Perform administrative and office support tasks efficiently</li>
+            <li>Handle accurate data entry and record management</li>
+            <li>Create prompts, videos, images, and digital content to support business needs</li>
+        </ul>
+
+        <h3>Preferred Skills</h3>
+        <h4>Requirements:</h4>
+        <ul>
+            <li>Strong English communication skills (spoken and written) — mandatory</li>
+            <li>Proficiency in administration and data entry work</li>
+            <li>Knowledge of prompt creation, video editing, and image design tools</li>
+            <li>Ability to join immediately preferred</li>
+        </ul>
+
+    </div>
+
+</div>
+</body>
+</html>

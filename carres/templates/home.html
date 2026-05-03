@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+    <nav class='header'>
+        <div><img src='{% static "Images/tp-logo.png" %}' id='logo'/></div>
+        <div><img src='{% static "Images/lang-switch.svg" %}'/></div>
+        <div><i class="fa-solid fa-bars"></i></div>
+    </nav>
+    <section class="profile">
+        <div> <img src='{% static "Images/profile.jpg" %}'></div>
+    </section>
+    <section class="text">
+        <h1><span class="black">Opportunities In An Environment</span><br>
+        <span class="blue">Where You Can Thrive.</span></h1>
+        <hr>
+    </section>
+    <section class='search'>
+        <input type="text" name="" id="" placeholder="Search By Job Description/Company Name">
+        <select name="" id="">
+            <option value="">Job Posting & Walk-in drives</option>
+            <option value="">Job Posting</option>
+            <option value="">Walk-in Drive</option>
+        </select>
+        <button>Search</button>
+    </section>
+    <section class="dbdata">
+    {% for job in jobs %}
+    <div class="job-card">
+        <div class="job-left">
+            <img src="" alt="logo">
+        </div>
+        <div class="job-right">
+            <h2><a href='{% url "globe" job.id %}'>{{ job.title }}</a></h2>
+            <p class="closing">Closing Date: {{ job.closing_date }}</p>
+            <p class="company">{{ job.company }}</p>
+            <p class="posted">Posted On: {{ job.posted_on }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+
+</body>
+
+
+</html>
