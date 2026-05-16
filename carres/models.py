@@ -9,6 +9,7 @@ class Job(models.Model):
     address=models.TextField(blank=True)
     email=models.EmailField(blank=True)
     urlc=models.URLField(blank=True)
+    image=models.ImageField(blank=True)
     class Meta:
         verbose_name_plural='Techpark'
     def __str__(self):
